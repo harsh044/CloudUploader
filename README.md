@@ -32,7 +32,6 @@ source venv/bin/activate  # On Windows use: venv\\Scripts\\activate
 ```bash
 pip install -r requirements.txt
 ```
-=======
 ## 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
