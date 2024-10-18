@@ -23,6 +23,7 @@ CloudUploader is an application that uploads files to a specific server using Ra
 ```bash
 git clone https://github.com/username/CloudUploader.git
 cd CloudUploader
+```
 
 ### 2. Create a Virtual Environment
 python3 -m venv venv
