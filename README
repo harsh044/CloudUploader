@@ -23,17 +23,17 @@ cd CloudUploader
 ```
 
 ## 2. Create a Virtual Environment
-```
+```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows use: venv\\Scripts\\activate
 ```
 
-<<<<<<< HEAD
 ## 3. Install Dependencies
-```
+```bash
 pip install -r requirements.txt
 ```
 =======
-### 3. Install Dependencies
+## 3. Install Dependencies
+```bash
 pip install -r requirements.txt
->>>>>>> 26be065bf2da5cc331be223aa6a76dc0f38e8c02
+```
