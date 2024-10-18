@@ -594,48 +594,6 @@ class MyWindow(QWidget):
 
         self.show_success()
 
-    # def on_submit_clicked(self,save=None):
-    #     collection_name = None
-    #     if self.rabbitmq_radio.isChecked():
-    #         try:
-    #             if not self.rabbitmq_validate():
-    #                 return
-
-    #             if save:
-    #                 collection_name = self.check_collections()
-    #                 if collection_name == None:
-    #                     return
-
-    #             self.publish_files_to_rabbitmq_queue(save,collection_name)
-    #             if save:
-    #                 self.refresh_ui()
-
-    #         except Exception as e:
-    #             error_message = "Failed to connect to server."
-    #             self.show_error(error_message)
-    #             self.refresh_ui()
-
-    #     elif self.awss3_radio.isChecked():
-    #         try:
-    #             if not self.aws_validate():
-    #                 return
-                
-    #             if save:
-    #                 collection_name = self.check_collections()
-    #                 if collection_name == None:
-    #                     return
-
-    #             self.upload_files_to_aws_s3_bucket(save,collection_name)
-    #             if save:
-    #                 self.refresh_ui()
-            
-    #         except Exception as e:
-    #             error_message = "Failed to connect to server."
-    #             self.show_error(error_message)
-    #             self.refresh_ui()
-        
-    #     self.show_success()
-
     def refresh_ui(self):
         self.load_collections()
         if self.rabbitmq_radio.isChecked():
@@ -691,35 +649,6 @@ class MyWindow(QWidget):
             return [self.rabbitmq_collection_names.itemText(i) for i in range(self.rabbitmq_collection_names.count())]
         else:
             return []
-
-    # def check_collections(self):
-
-    #     while True:
-    #         collection_name, ok_pressed = QInputDialog.getText(self, 'Collection Name', 'Enter Collectin Name:')
-
-    #         if (len(collection_name) == 0) and (not ok_pressed):
-    #             return
-            
-
-    #         elif collection_name and ok_pressed:
-    #             if ok_pressed:
-    #                 if not collection_name:
-    #                     self.show_error("Please Fill Collection Name.")
-    #                     continue
-
-    #             if self.awss3_radio.isChecked():
-    #                 if collection_name in [self.aws_s3_collection_names.itemText(i) for i in range(self.aws_s3_collection_names.count())]:
-    #                     QMessageBox.warning(self, 'Duplicate Collection Name', 'Collection Name already exists!')
-    #                     continue
-    #                 else:
-    #                     return collection_name
-
-    #             if self.rabbitmq_radio.isChecked():
-    #                 if collection_name in [self.rabbitmq_collection_names.itemText(i) for i in range(self.rabbitmq_collection_names.count())]:
-    #                     QMessageBox.warning(self, 'Duplicate Collection Name', 'Collection Name already exists!')
-    #                     continue
-    #                 else:
-    #                     return collection_name
 
     def aws_file_select_clicked(self):
         options = QFileDialog.Options()
